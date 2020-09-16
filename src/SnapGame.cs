@@ -51,7 +51,7 @@ namespace CardGames
 		private static void DrawGame(Snap myGame)
 		{
 			SwinGame.DrawBitmap("cardsBoard.png",0,0);
-			SwinGame.LoadFontNamed("GameFont", "Chunkfive.otf", 24);
+			SwinGame.LoadFontNamed("GameFont", "chunkfive.otf", 24);
 			// Draw the top card
 			Card top = myGame.TopCard;
 			if (top != null)
