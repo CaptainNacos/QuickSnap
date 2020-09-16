@@ -42,6 +42,7 @@ namespace CardGames
 				myGame.PlayerHit (1);
 				}
 			}
+<<<<<<< HEAD
 			if (myGame.IsStarted)
 				{
 					if ( SwinGame.KeyTyped (KeyCode.vk_LSHIFT) && SwinGame.KeyTyped (KeyCode.vk_RSHIFT))
@@ -58,6 +59,9 @@ namespace CardGames
 				}
 }
 		}
+=======
+		}	
+>>>>>>> add-background-image
 
 		/// <summary>
 		/// Draws the game to the Window.
@@ -66,7 +70,7 @@ namespace CardGames
 		private static void DrawGame(Snap myGame)
 		{
 			SwinGame.DrawBitmap("cardsBoard.png",0,0);
-			SwinGame.LoadFontNamed("GameFont", "Chunkfive.otf", 24);
+			SwinGame.LoadFontNamed("GameFont", "chunkfive.otf", 24);
 			// Draw the top card
 			Card top = myGame.TopCard;
 			if (top != null)
