@@ -50,9 +50,8 @@ namespace CardGames
 
 }
 		}
-=======
 		}	
->>>>>>> add-background-image
+
 
 		/// <summary>
 		/// Draws the game to the Window.
