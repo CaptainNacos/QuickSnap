@@ -47,9 +47,7 @@ namespace CardGames
 					SwinGame.PlaySoundEffect("Slap");
 					myGame.PlayerHit (1);
 				}
-
-}
-		}
+			}
 		}	
 
 
