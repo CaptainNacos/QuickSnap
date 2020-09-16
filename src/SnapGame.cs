@@ -24,9 +24,25 @@ namespace CardGames
 
 			if (SwinGame.KeyTyped (KeyCode.vk_SPACE))
 			{
-				myGame.FlipNextCard ();
+				myGame.Start ();
 			}
-		}
+		
+			if (myGame.IsStarted)
+			{
+				if ( SwinGame.KeyTyped (KeyCode.vk_LSHIFT) && SwinGame.KeyTyped (KeyCode.vk_RSHIFT))
+				{
+				//TODO: add sound effects
+				}
+				else if (SwinGame.KeyTyped (KeyCode.vk_LSHIFT))
+				{
+				myGame.PlayerHit (0);
+				}
+				else if (SwinGame.KeyTyped (KeyCode.vk_RSHIFT))
+				{
+				myGame.PlayerHit (1);
+				}
+			}
+		}	
 
 		/// <summary>
 		/// Draws the game to the Window.
@@ -35,19 +51,19 @@ namespace CardGames
 		private static void DrawGame(Snap myGame)
 		{
 			SwinGame.DrawBitmap("cardsBoard.png",0,0);
-
+			SwinGame.LoadFontNamed("GameFont", "Chunkfive.otf", 24);
 			// Draw the top card
 			Card top = myGame.TopCard;
 			if (top != null)
 			{
-				SwinGame.DrawText ("Top Card is " + top.ToString (), Color.RoyalBlue, 0, 20);
-				SwinGame.DrawText ("Player 1 score: " + myGame.Score(0), Color.RoyalBlue, 0, 30);
-				SwinGame.DrawText ("Player 2 score: " + myGame.Score(1), Color.RoyalBlue, 0, 40);
+				SwinGame.DrawText ("Top Card is " + top.ToString (), Color.RoyalBlue, "GameFont", 20);
+				SwinGame.DrawText ("Player 1 score: " + myGame.Score(0), Color.RoyalBlue, "GameFont", 30);
+				SwinGame.DrawText ("Player 2 score: " + myGame.Score(1), Color.RoyalBlue, "GameFont", 40);
 				SwinGame.DrawCell (SwinGame.BitmapNamed ("Cards"), top.CardIndex, 521, 153);
 			}
 			else
 			{
-				SwinGame.DrawText ("No card played yet...", Color.RoyalBlue, 0, 20);
+				SwinGame.DrawText ("No card played yet...", Color.RoyalBlue, "GameFont", 20);
 			}
 
 			// Draw the back of the cards... to represent the deck
